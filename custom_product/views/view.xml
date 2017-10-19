@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<odoo>
+	<!--Inherit the sale order form view--> 
+	<record id="view_product_template_custom" model="ir.ui.view"> 
+		<field name="name">product.custom.form.inherited</field>
+		<field name="model">product.product</field> 
+		<field name="inherit_id" ref="product.product_normal_form_view"/> 
+		<field name="arch" type="xml"> 
+			<xpath expr="/form/sheet/notebook/page[1]" position="after">
+				<page string="Materiales">
+					<field name="material_ids"/>
+				</page>
+			</xpath> 
+		</field> 
+	</record>
+	
+	<record id="view_product_template_only_custom" model="ir.ui.view"> 
+		<field name="name">product.template.custom.form.inherited</field>
+		<field name="model">product.template</field> 
+		<field name="inherit_id" ref="product.product_template_only_form_view"/> 
+		<field name="arch" type="xml"> 
+			<xpath expr="/form/sheet/notebook/page[1]" position="after">
+				<page string="Materiales">
+					<field name="material_ids"/>
+				</page>
+			</xpath> 
+		</field> 
+	</record>
+	
+</odoo>

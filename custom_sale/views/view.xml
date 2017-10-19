@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<odoo>
+	<!--Inherit the sale order form view--> 
+	<record id="view_sale_order_custom" model="ir.ui.view"> 
+		<field name="name">sale.order.custom.form.inherited</field>
+		<field name="model">sale.order</field> 
+		<field name="inherit_id" ref="sale.view_order_form"/> 
+		<field name="arch" type="xml"> 
+			<field name="partner_id" position="after"> 
+				<field name="namec"/>
+				<field name="contacto_id" domain="[('parent_id', '=', partner_id)]" options="{'no_open': True,'no_create':1, 'no_create_edit':1}"/>
+			</field> 
+			<xpath expr="/form/sheet/notebook/page[1]" position="after">
+				<page string="Datos base">
+					<div class="oe_title">
+						<h3>
+							Valores iniciales
+						</h3>
+					</div>
+					<group>
+						<group>
+							<field name="iva"/>
+							<field name="iva_materiales"/>
+							<field name="f_prestaciones_MO"/>
+						</group>
+						<group>
+						
+						</group>
+					</group>
+					<div class="oe_title">
+						<h3>
+							Factor de corrección y margen de ganancia
+						</h3>
+						<p>FC: Factor de corrección; MG: Margen de ganancia</p>
+					</div>
+					<group>
+						<group>
+							<field name="fc_materiales"/>
+							<field name="fc_herramientas"/>
+							<field name="fc_recursos"/>
+						</group>
+						<group>
+							<field name="mg_materiales"/>
+							<field name="mg_herramientas"/>
+							<field name="mg_recursos"/>
+						</group>
+					</group>
+				</page>
+			</xpath> 
+		</field> 
+	</record>
+	
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo> 
+<!-- Comentario en la Views --> 
+     <record id="view_ej_proveedor_form" model="ir.ui.view"> 
+        <field name="name">ej.proveedor.form</field> 
+        <field name="model">ej.proveedor</field> 
+        <field name="arch" type="xml"> 
+            <form string="Listado de proveedores"> 
+                <group> 
+                    <field name="razon_social"/> 
+                    <field name="descuento_compra"/>
+					<field name="ref_externa"/>
+					<field name="marca"/>
+                </group> 
+            </form> 
+        </field> 
+    </record> 
+     <record id="view_ej_unidad_tree" model="ir.ui.view"> 
+        <field name="name">ej.proveedor.tree</field> 
+        <field name="model">ej.proveedor</field> 
+        <field name="arch" type="xml"> 
+           <tree> 
+                    <field name="razon_social"/> 
+                    <field name="descuento_compra"/>
+					<field name="ref_externa"/>
+					<field name="marca"/>
+           </tree> 
+        </field> 
+    </record> 
+    <record model="ir.actions.act_window" id="act_ej_proveedor"> 
+        <field name="name">proveedor</field> 
+        <field name="type">ir.actions.act_window</field> 
+        <field name="res_model">ej.proveedor</field> 
+        <field name="view_type">form</field> 
+        <field name="view_mode">tree,form</field> 
+    </record> 
+<!--  Declaramos los menu --> 
+<menuitem id="stock.submenu_ej_proveedor_action" name="Proveedores" parent="stock.menu_stock_administracion" sequence="10" action="act_ej_proveedor"/>
+</odoo> 

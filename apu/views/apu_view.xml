@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<odoo> 
+<!-- Comentario en la Views --> 
+     <record id="view_ej_apu_form" model="ir.ui.view"> 
+        <field name="name">ej.apu.form</field> 
+        <field name="model">ej.apu</field> 
+        <field name="arch" type="xml"> 
+            <form string="Listado de Apu"> 
+                <group> 
+                    <field name="descripcion"/> 
+                    <field name="rendimiento"/> 
+                    <field name="unidad_id"/> 
+                </group> 
+            </form> 
+        </field> 
+    </record> 
+     <record id="view_ej_apu_tree" model="ir.ui.view"> 
+        <field name="name">ej.apu.tree</field> 
+        <field name="model">ej.apu</field> 
+        <field name="arch" type="xml"> 
+           <tree> 
+                    <field name="descripcion"/> 
+                    <field name="rendimiento"/> 
+                    <field name="unidad_id"/> 
+           </tree> 
+        </field> 
+    </record> 
+    <record model="ir.actions.act_window" id="act_ej_apu"> 
+        <field name="name">apu</field> 
+        <field name="type">ir.actions.act_window</field> 
+        <field name="res_model">ej.apu</field> 
+        <field name="view_type">form</field> 
+        <field name="view_mode">tree,form</field> 
+    </record> 
+<!--  Declaramos los menu --> 
+<menuitem id="ej_apu_menu" name="Apu" sequence="10"/> 
+<menuitem id="submenu_ej_apu_menu" name="Apu" sequence="10" parent="ej_apu_menu"/> 
+<menuitem id="submenu_ej_apu_action" name="Apu" sequence="10" parent="submenu_ej_apu_menu" action="act_ej_apu"/> 
+</odoo> 
