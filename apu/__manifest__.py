@@ -1,6 +1,7 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 ##############################################################################
 # agrega un comentarios
+# agrega otro comentario
 #    OpenERP, Open Source Management Solution
 #    This module copyright (C) 2017 Marlon Falcón Hernandez
 #    (<http://www.falconsolutions.cl>).
