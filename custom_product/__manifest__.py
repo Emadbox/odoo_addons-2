@@ -14,11 +14,11 @@ Otros campos para el modulo de ventas
     'depends': [
         'product'
     ],
-    'data': [
-        
-        'views/view.xml',
-        
-    ],
+    #'data': [
+    #    
+    #    'views/view.xml',
+    #    
+    #],
     'demo': [],
     'installable': True,
     'application': True,

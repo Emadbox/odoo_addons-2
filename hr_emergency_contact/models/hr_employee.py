@@ -17,4 +17,7 @@ class HrEmployee(models.Model):
         domain=[
             ('is_company', '=', False),
         ]
+    
     )
+    test_field = fields.Text('Algun camop')
+    test_2 = fields.Boolean('otro', default = False)

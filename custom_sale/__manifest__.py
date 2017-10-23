@@ -8,14 +8,13 @@
     'sequence': 5,
     'summary': 'Leads, Opportunities, Activities',
     'description': """
-Otros campos para el modulo de ventas
+Otros campos para el modulo de ventass
 """,
     'website': 'https://www.odoo.com/page/crm',
     'depends': [
         'sale'
     ],
     'data': [
-        
         'views/view.xml',
         
     ],
